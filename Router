@@ -1,0 +1,32 @@
+ {
+    path: '',
+    component: Layout,
+    redirect: 'calculator',
+    children: [
+      {
+        path: 'calculator',
+        component: () => import('@/views/calculator/index.vue'),
+        name: 'Index',
+        meta: { title: '科学计算器', icon: 'dashboard' }
+      }
+    ]
+  },
+  {
+    path: '/interestrate',
+    component: Layout,
+    meta: { title: '利率计算器', icon: 'dashboard' },
+    children: [
+      {
+        path: 'deposit',
+        component: () => import('@/views/InterestRate/deposit/index.vue'),
+        name: 'Deposit',
+        meta: { title: '存款', icon: 'dashboard' }
+      },
+      {
+        path: 'loans',
+        component: () => import('@/views/InterestRate/loans/index.vue'),
+        name: 'Loans',
+        meta: { title: '贷款', icon: 'dashboard' }
+      }
+    ]
+  },
